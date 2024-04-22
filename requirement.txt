@@ -1,6 +1,6 @@
 gradio
-sentencepiece
 transformers
+sentencepiece
 einops
 accelerate
 tiktoken
