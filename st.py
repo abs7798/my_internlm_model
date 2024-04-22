@@ -32,6 +32,8 @@ from transformers import AutoTokenizer, AutoModelForCausalLM  # isort: skip
 logger = logging.get_logger(__name__)
 
 
+
+
 @dataclass
 class GenerationConfig:
     # this config is used for chat to provide more diversity
@@ -231,7 +233,13 @@ def combine_history(prompt):
 def main():
     # torch.cuda.empty_cache()
     print('load model begin.')
-    model, tokenizer = load_model()
+    # download internlm2 to the base_path directory using git tool
+    base_path = './internlm2-chat-7b'
+    os.system(f'git clone https://code.openxlab.org.cn/abs7798/my_internlm_model.git {base_path}')
+    os.system(f'cd {base_path} && git lfs pull')
+    tokenizer = AutoTokenizer.from_pretrained(base_path,trust_remote_code=True)
+    model = AutoModelForCausalLM.from_pretrained(base_path,trust_remote_code=True, torch_dtype=torch.float16).cuda()
+
     print('load model end.')
 
 

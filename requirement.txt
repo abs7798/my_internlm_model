@@ -1,4 +1,6 @@
 gradio
+streamlit
+sentencepiece
 transformers
 sentencepiece
 einops
