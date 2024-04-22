@@ -1,6 +1,6 @@
 import gradio as gr
 import os
-from lmdeploy import pipeline, TurbomindEngineConfig
+
 
 # download internlm2 to the base_path directory using git tool
 base_path = './my_internlm_model'
@@ -13,7 +13,9 @@ os.system(f'git clone https://code.openxlab.org.cn/abs7798/my_internlm_model.git
 os.system(f'cd {base_path} && git lfs pull')
 os.system("pip install sentencepiece")
 os.system("pip install einops")
+os.system("pip install lmdeploy[all]==0.3.0")
 
+from lmdeploy import pipeline, TurbomindEngineConfig
 backend_config = TurbomindEngineConfig(cache_max_entry_count=0.2) 
 
 pipe = pipeline(base_path, backend_config=backend_config)
