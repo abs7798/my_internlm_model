@@ -9,6 +9,7 @@ os.system(f'mkdir internlm2-chat-7b')
 
 print(f'创建文件夹{os.path.isdir(base_path)}')
 os.system(f'cd {base_path}')
+os.system("git lfs install")
 os.system(f'git clone https://code.openxlab.org.cn/abs7798/my_internlm_model.git')
 os.system(f'cd {base_path} && git lfs pull')
 os.system("pip install sentencepiece")
