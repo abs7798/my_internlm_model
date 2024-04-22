@@ -16,6 +16,7 @@ Using `python path/to/web_demo.py` may cause unknown problems.
 """
 # isort: skip_file
 import copy
+import os
 import warnings
 from dataclasses import asdict, dataclass
 from typing import Callable, List, Optional
