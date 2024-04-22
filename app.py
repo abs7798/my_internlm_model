@@ -7,6 +7,8 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, AutoModel
 base_path = 'my_internlm_model'
 os.system(f'git clone https://code.openxlab.org.cn/abs7798/{base_path}.git')
 os.system(f'cd {base_path} && git lfs pull')
+os.system("pip install sentencepiece")
+
 
 tokenizer = AutoTokenizer.from_pretrained(base_path,trust_remote_code=True)
 model = AutoModelForCausalLM.from_pretrained(base_path,trust_remote_code=True, torch_dtype=torch.float16).cuda()
