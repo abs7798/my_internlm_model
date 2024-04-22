@@ -11,7 +11,7 @@ print(f'创建文件夹{os.path.isdir(base_path)}')
 os.system(f'git clone https://code.openxlab.org.cn/OpenLMLab/internlm2-chat-7b.git {base_path}')
 os.system(f'cd {base_path} && git lfs pull')
 os.system("pip install sentencepiece")
-
+os.system("pip install einops")
 
 tokenizer = AutoTokenizer.from_pretrained(base_path,trust_remote_code=True)
 model = AutoModelForCausalLM.from_pretrained(base_path,trust_remote_code=True, torch_dtype=torch.float16).cuda()
