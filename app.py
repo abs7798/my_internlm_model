@@ -3,8 +3,8 @@ import os
 from lmdeploy import pipeline, TurbomindEngineConfig
 
 # download internlm2 to the base_path directory using git tool
-base_path = './internlm2-chat-7b'
-os.system(f'mkdir internlm2-chat-7b')
+base_path = './my_internlm_model'
+os.system(f'mkdir my_internlm_model')
 
 print(f'创建文件夹{os.path.isdir(base_path)}')
 os.system(f'cd {base_path}')
