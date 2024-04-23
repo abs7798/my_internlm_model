@@ -13,19 +13,6 @@ os.system(f'cd {base_path} && git lfs pull')
 os.system("pip install sentencepiece")
 os.system("pip install einops")
 
-'''from lmdeploy import pipeline, TurbomindEngineConfig
-backend_config = TurbomindEngineConfig(cache_max_entry_count=0.2) 
-
-pipe = pipeline(base_path, backend_config=backend_config)
-
-def model(image, text):
-    response = pipe((text, image)).text
-    return [(text, response)]
-
-demo = gr.Interface(fn=model, inputs=[gr.Textbox(),], outputs=gr.Chatbot())
-demo.launch()  '''
-
-
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, AutoModel
 
