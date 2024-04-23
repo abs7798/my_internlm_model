@@ -1,6 +1,2 @@
 gradio
 transformers
-sentencepiece
-einops
-accelerate
-tiktoken
