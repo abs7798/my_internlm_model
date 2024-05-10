@@ -13,7 +13,7 @@ os.system(f'cd {base_path} && git lfs pull')
 os.system("pip install sentencepiece")
 os.system("pip install einops")
 os.system("pip install transformers")
-
+os.system("pip install --upgrade gradio==4.10.0")
 '''from lmdeploy import pipeline, TurbomindEngineConfig
 backend_config = TurbomindEngineConfig(cache_max_entry_count=0.2) 
 
