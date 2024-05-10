@@ -3,11 +3,11 @@ import os
 
 # download internlm2 to the base_path directory using git tool
 base_path = './my_internlm_model'
-#os.system(f'mkdir my_internlm_model')
+os.system(f'mkdir my_internlm_model')
 
 print(f'创建文件夹{os.path.isdir(base_path)}')
-#os.system(f'cd {base_path}')
-#os.system("git lfs install")
+os.system(f'cd {base_path}')
+os.system("git lfs install")
 os.system(f'git clone https://code.openxlab.org.cn/abs7798/my_internlm_model.git {base_path}')
 os.system(f'cd {base_path} && git lfs pull')
 os.system("pip install sentencepiece")
